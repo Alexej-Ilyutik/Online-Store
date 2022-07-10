@@ -1,0 +1,97 @@
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 0.3rem solid var(--white-color);
+        box-shadow: 0.3rem 0.3rem 1rem rgba(5, 42, 77, 0.9);
+    }
+    figcaption {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+}
+
+.header__tools {
+    display: flex;
+    width: 38rem;
+    justify-content: space-between;
+    align-items: center;
+    .tools__search {
+        width: 30rem;
+        height: 4rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 0.5rem;
+        border: 0.2rem solid var(--white-color);
+        input {
+            width: 20rem;
+            padding: 0.7rem 0.8rem;
+            float: left;
+            color: var(--white-color);
+            border: 0;
+            background: transparent;
+            font-size: 2rem;
+            &:focus {
+                outline: 0;
+                background: transparent;
+            }
+        }
+
+        button {
+            position: relative;
+            float: right;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            height: 3.8rem;
+            width: 9rem;
+            color: #fff;
+            background: transparent;
+            border-left: 0.2rem solid #fff;
+            border-radius: 0 0.3rem 0.3rem 0;
+            font-size: 1.8rem;
+            &:hover {
+                background: var(--bg-color);
+                color: var(--main-color);
+            }
+            &:active {
+                box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+}
+
+.tools__basket {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    top: .8rem;
+    .basket__img {
+        height: 3.5rem;
+        width: 4.5rem;
+        background-image: url(./../../assets/svg/shopping-basket.svg);
+        background-size: cover;
+    }
+    .basket__info {
+        position: relative;
+        background-color: var(--red-color);
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: 50%;
+        bottom: 3.3rem;
+        left: 2.9rem;
+        text-align: center;
+        .basket__count {
+            font-size: 1.4rem;
+        }
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+}
