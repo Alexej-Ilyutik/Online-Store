@@ -1,59 +1,58 @@
 :root {
-  --white-color: #fff;
-  --text-dark: rgba(27, 79, 111, 0.5);
-  --bg-color: #d6e1e8;
-  --main-color: #1b4f6f;
-  --main-btn: rgba(27, 79, 110, 0.35);
-  --secondary-light: #f0f9fe;
-  --red-color: rgb(197, 50, 50);
+    --white-color: #fff;
+    --text-dark: rgba(27, 79, 111, 0.5);
+    --bg-color: #d6e1e8;
+    --main-color: #1b4f6f;
+    --main-btn: rgba(27, 79, 110, 0.35);
+    --secondary-light: #f0f9fe;
+    --red-color: rgb(197, 50, 50);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 62.5%;
-  font-weight: 500;
-  scroll-behavior: smooth;
-  color: var(--white-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    font-weight: 500;
+    scroll-behavior: smooth;
+    color: var(--white-color);
 }
 
 html,
 body {
-  height: 100%;
-  background-color: var(--bg-color);
+    height: 100%;
+    background-color: var(--bg-color);
 }
 
 .wrapper {
-  max-width: 1470px;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+    max-width: 1470px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .header {
-  padding: 0 4rem;
-  height: 9vh;
-  background-color: var(--main-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1rem 4rem;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main {
-  background-color: var(--white-color);
-  flex: 1 1 auto;
-  display: flex;
+    background-color: var(--white-color);
+    flex: 1 1 auto;
+    display: flex;
 }
 
 .footer {
-  background-color: var(--main-color);
-  padding: 0 6rem;
-  height: 9vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: var(--main-color);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
 }
