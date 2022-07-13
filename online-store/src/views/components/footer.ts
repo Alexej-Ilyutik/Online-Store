@@ -9,7 +9,7 @@ const Footer: PageRender = {
             Alexej Ilyutik
           </a>
         </div>
-        <p>2022</p>
+        <p class="footer__year">2022</p>
         `;
         return view;
     },

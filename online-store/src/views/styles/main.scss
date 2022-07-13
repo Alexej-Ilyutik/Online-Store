@@ -4,9 +4,150 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.46rem 0.42rem;
-    gap: 0.83rem;
-    width: 50rem;
+    padding: 3.5rem 3rem;
+    width: 60rem;
+}
+
+.tools__brand,
+.tools__body,
+.tools__transmission,
+.tools__fuel,
+.tools__color {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tools__transmission,
+.tools__fuel,
+.tools__color {
+    margin-bottom: 3.5rem;
+}
+
+.tools__brand,
+.tools__body {
+    margin-bottom: 2.5rem;
+}
+
+.tools__button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    &:hover {
+        transform: scale(1.2);
+        &::after {
+            content: attr(data-filter);
+            position: absolute;
+            width: 8rem;
+            left: 50%;
+            margin-left: -4rem;
+            bottom: 3.8rem;
+            z-index: 10;
+            font-size: 1.5rem;
+            color: var(--white-color);
+        }
+    }
+}
+
+.tools__title {
+    font-size: 2.5rem;
+}
+
+.brand {
+    width: 3.8rem;
+    height: 3.8rem;
+    padding: 0.1rem;
+    border: 0.3rem solid var(--white-color);
+    border-radius: 1rem;
+    &:nth-child(2) {
+        background-image: url(../../assets/svg/audi.svg);
+    }
+
+    &:nth-child(3) {
+        background-image: url(../../assets/svg/bmw.svg);
+    }
+
+    &:nth-child(4) {
+        background-image: url(../../assets/svg/ford.svg);
+    }
+
+    &:nth-child(5) {
+        background-image: url(../../assets/svg/honda.svg);
+    }
+
+    &:nth-child(6) {
+        background-image: url(../../assets/svg/mercedes.svg);
+    }
+
+    &:nth-child(7) {
+        background-image: url(../../assets/svg/porsche.svg);
+    }
+}
+
+.body {
+    width: 4.6rem;
+    height: 4.6rem;
+    border: none;
+    background-size: contain;
+    &:nth-child(2) {
+        background-image: url(../../assets/svg/coupe.svg);
+    }
+    &:nth-child(3) {
+        background-image: url(../../assets/svg/hatchback.svg);
+    }
+    &:nth-child(4) {
+        background-image: url(../../assets/svg/pickup.svg);
+    }
+    &:nth-child(5) {
+        background-image: url(../../assets/svg/suv.svg);
+    }
+    &:nth-child(6) {
+        background-image: url(../../assets/svg/sedan.svg);
+    }
+}
+
+.tools__select {
+    display: inline-block;
+    height: 3rem;
+    width: 18rem;
+    outline: none;
+    color: var(--main-color);
+    border: 0.1rem solid var(--main-btn);
+    border-radius: 0.5rem;
+    box-shadow: 0.3rem 0.3rem 1rem rgb(5 42 77 / 90%);
+    background: var(--secondary-light);
+    font-size: 1.8rem;
+    option {
+        color: var(--main-color);
+        font-size: 1.8rem;
+    }
+}
+
+.color {
+    width: 3.8rem;
+    height: 3.8rem;
+    border: 0.3rem solid var(--white-color);
+    border-radius: 1rem;
+    &:nth-child(2) {
+        background-color: black;
+    }
+    &:nth-child(3) {
+        background-color: white;
+    }
+    &:nth-child(4) {
+        background-color: blue;
+    }
+    &:nth-child(5) {
+        background-color: red;
+    }
+    &:nth-child(6) {
+        background-color: gray;
+    }
 }
 
 .main__feed {
@@ -49,7 +190,7 @@
 
 .feed__btn {
     width: 15rem;
-    padding: .8rem 0;
+    padding: 0.8rem 0;
     background-color: var(--main-btn);
     border: none;
     border-radius: 0.42rem;
