@@ -1,4 +1,6 @@
 import { PageRender } from './PageRender';
+import { CardAuto } from './Card';
+import { data } from '../../data';
 import './../styles/main.scss';
 
 const MainPage: PageRender = {
@@ -71,14 +73,46 @@ const MainPage: PageRender = {
           <button class="tools__reset">Reset filters</button>
         </aside>
         <article class="main__feed feed">
-   
-          <button class="feed__btn">Show more...</button>
-          
         </article>
-        <div class="main__line"></div>
-        `;
+        <div class="main__line"></div>`;
         return view;
     },
 };
 
-export { MainPage };
+// const FEED_CONTAINER = document.querySelector('.main__feed');
+
+// console.log(FEED_CONTAINER);
+
+function renderCards(elem: HTMLElement) {
+    elem.innerHTML = '';
+
+    for (let i = 0; i < data.length; i++) {
+        const numImg = data[i]['num'];
+        const brandAuto = data[i]['brand'];
+        const modelAuto = data[i]['model'];
+        const yearAuto = data[i]['year'];
+        const bodyType = data[i]['body'];
+        const colorBody = data[i]['color'];
+        const transmissionType = data[i]['transmission'];
+        const fuelType = data[i]['fuel'];
+        const favoriteAuto = data[i]['favorite'];
+
+        const newCard = new CardAuto(
+            numImg,
+            brandAuto,
+            modelAuto,
+            yearAuto,
+            bodyType,
+            colorBody,
+            transmissionType,
+            fuelType,
+            favoriteAuto
+        );
+
+        elem.appendChild(newCard.createCard());
+    }
+}
+
+// renderCards();
+
+export { MainPage, renderCards };

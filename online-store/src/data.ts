@@ -14,7 +14,7 @@ export const data: IData[] = [
     {
         num: '1',
         brand: 'Audi',
-        model: 'A4 45 S line',
+        model: 'Audi A4 45 S line',
         year: '2021',
         body: 'Sedan',
         color: 'White',
@@ -25,7 +25,7 @@ export const data: IData[] = [
     {
         num: '2',
         brand: 'Audi',
-        model: 'A6',
+        model: 'Audi A6',
         year: '2003',
         body: 'Sedan',
         color: 'Gray',
@@ -36,7 +36,7 @@ export const data: IData[] = [
     {
         num: '3',
         brand: 'Audi',
-        model: 'A6',
+        model: 'Audi A6',
         year: '2005',
         body: 'Sedan',
         color: 'Black',
@@ -47,7 +47,7 @@ export const data: IData[] = [
     {
         num: '4',
         brand: 'Audi',
-        model: 'Q3',
+        model: 'Audi Q3',
         year: '2021',
         body: 'SUV',
         color: 'Blue',
@@ -58,7 +58,7 @@ export const data: IData[] = [
     {
         num: '5',
         brand: 'Audi',
-        model: 'Q5',
+        model: 'Audi Q5',
         year: '2014',
         body: 'SUV',
         color: 'Gray',
@@ -69,7 +69,7 @@ export const data: IData[] = [
     {
         num: '6',
         brand: 'Audi',
-        model: 'Q7',
+        model: 'Audi Q7',
         year: '2013',
         body: 'SUV',
         color: 'Blue',
@@ -80,7 +80,7 @@ export const data: IData[] = [
     {
         num: '7',
         brand: 'Audi',
-        model: 'Q7',
+        model: 'Audi Q7',
         year: '2015',
         body: 'SUV',
         color: 'White',
@@ -91,7 +91,7 @@ export const data: IData[] = [
     {
         num: '8',
         brand: 'Audi',
-        model: 'Q7',
+        model: 'Audi Q7',
         year: '2016',
         body: 'SUV',
         color: 'Black',
@@ -102,7 +102,7 @@ export const data: IData[] = [
     {
         num: '9',
         brand: 'Audi',
-        model: 'S5',
+        model: 'Audi S5',
         year: '2010',
         body: 'Coupe',
         color: 'White',
@@ -113,7 +113,7 @@ export const data: IData[] = [
     {
         num: '10',
         brand: 'Audi',
-        model: 'TT',
+        model: 'Audi TT',
         year: '2004',
         body: 'Coupe',
         color: 'Red',
@@ -124,7 +124,7 @@ export const data: IData[] = [
     {
         num: '11',
         brand: 'BMW',
-        model: '335 i',
+        model: 'BMW 335 i',
         year: '2013',
         body: 'Sedan',
         color: 'Red',
@@ -135,7 +135,7 @@ export const data: IData[] = [
     {
         num: '12',
         brand: 'BMW',
-        model: '428',
+        model: 'BMW 428',
         year: '2016',
         body: 'Coupe',
         color: 'Red',
@@ -146,7 +146,7 @@ export const data: IData[] = [
     {
         num: '13',
         brand: 'BMW',
-        model: '430 i',
+        model: 'BMW 430 i',
         year: '2021',
         body: 'Coupe',
         color: 'Black',
@@ -157,7 +157,7 @@ export const data: IData[] = [
     {
         num: '14',
         brand: 'BMW',
-        model: '430',
+        model: 'BMW 430',
         year: '2018',
         body: 'Hatchback',
         color: 'Gray',
@@ -168,7 +168,7 @@ export const data: IData[] = [
     {
         num: '15',
         brand: 'BMW',
-        model: '530 i',
+        model: 'BMW 530 i',
         year: '2003',
         body: 'Sedan',
         color: 'Gray',
@@ -179,7 +179,7 @@ export const data: IData[] = [
     {
         num: '16',
         brand: 'BMW',
-        model: '640',
+        model: 'BMW 640',
         year: '2019',
         body: 'Hatchback',
         color: 'Black',
@@ -190,7 +190,7 @@ export const data: IData[] = [
     {
         num: '17',
         brand: 'BMW',
-        model: 'i3',
+        model: 'BMW i3',
         year: '2014',
         body: 'Hatchback',
         color: 'White',
@@ -201,7 +201,7 @@ export const data: IData[] = [
     {
         num: '18',
         brand: 'BMW',
-        model: 'i3',
+        model: 'BMW i3',
         year: '2017',
         body: 'Hatchback',
         color: 'Blue',
@@ -212,7 +212,7 @@ export const data: IData[] = [
     {
         num: '19',
         brand: 'BMW',
-        model: 'M4 CS',
+        model: 'BMW M4 CS',
         year: '2019',
         body: 'Coupe',
         color: 'Blue',
@@ -223,7 +223,7 @@ export const data: IData[] = [
     {
         num: '20',
         brand: 'BMW',
-        model: 'Z3 M',
+        model: 'BMW Z3 M',
         year: '2000',
         body: 'Coupe',
         color: 'Black',
@@ -234,7 +234,7 @@ export const data: IData[] = [
     {
         num: '21',
         brand: 'Ford',
-        model: 'Edge ST',
+        model: 'Ford Edge ST',
         year: '2020',
         body: 'SUV',
         color: 'Blue',
@@ -245,7 +245,7 @@ export const data: IData[] = [
     {
         num: '22',
         brand: 'Ford',
-        model: 'F-150 Lariat',
+        model: 'Ford F-150 Lariat',
         year: '2018',
         body: 'Pickup Truck',
         color: 'Gray',
@@ -256,7 +256,7 @@ export const data: IData[] = [
     {
         num: '23',
         brand: 'Ford',
-        model: 'F-250 XLT',
+        model: 'Ford F-250 XLT',
         year: '2017',
         body: 'Pickup Truck',
         color: 'Red',
@@ -267,7 +267,7 @@ export const data: IData[] = [
     {
         num: '24',
         brand: 'Ford',
-        model: 'F-450 Platinum',
+        model: 'Ford F-450 Platinum',
         year: '2019',
         body: 'Pickup Truck',
         color: 'Gray',
@@ -278,7 +278,7 @@ export const data: IData[] = [
     {
         num: '25',
         brand: 'Ford',
-        model: 'Focus Electric',
+        model: 'Ford Focus Electric',
         year: '2014',
         body: 'Hatchback',
         color: 'Gray',
@@ -289,7 +289,7 @@ export const data: IData[] = [
     {
         num: '26',
         brand: 'Ford',
-        model: 'Focus RS Base',
+        model: 'Ford Focus RS Base',
         year: '2015',
         body: 'Hatchback',
         color: 'Blue',
@@ -300,7 +300,7 @@ export const data: IData[] = [
     {
         num: '27',
         brand: 'Ford',
-        model: 'Focus RS Base',
+        model: 'Ford Focus RS Base',
         year: '2016',
         body: 'Hatchback',
         color: 'White',
@@ -311,7 +311,7 @@ export const data: IData[] = [
     {
         num: '28',
         brand: 'Ford',
-        model: 'Focus SE',
+        model: 'Ford Focus SE',
         year: '2013',
         body: 'Sedan',
         color: 'Gray',
@@ -322,7 +322,7 @@ export const data: IData[] = [
     {
         num: '29',
         brand: 'Ford',
-        model: 'Mustang GT',
+        model: 'Ford Mustang GT',
         year: '2021',
         body: 'Coupe',
         color: 'Black',
@@ -333,7 +333,7 @@ export const data: IData[] = [
     {
         num: '30',
         brand: 'Ford',
-        model: 'Mustang Mach E',
+        model: 'Ford Mustang Mach E',
         year: '2021',
         body: 'SUV',
         color: 'White',
@@ -344,7 +344,7 @@ export const data: IData[] = [
     {
         num: '31',
         brand: 'Honda',
-        model: 'Civic LX',
+        model: 'Honda Civic LX',
         year: '2011',
         body: 'Sedan',
         color: 'Gray',
@@ -355,7 +355,7 @@ export const data: IData[] = [
     {
         num: '32',
         brand: 'Honda',
-        model: 'Civic Si',
+        model: 'Honda Civic Si',
         year: '2020',
         body: 'Coupe',
         color: 'White',
@@ -366,7 +366,7 @@ export const data: IData[] = [
     {
         num: '33',
         brand: 'Honda',
-        model: 'Civic Si',
+        model: 'Honda Civic Si',
         year: '2020',
         body: 'Hatchback',
         color: 'Black',
@@ -377,7 +377,7 @@ export const data: IData[] = [
     {
         num: '34',
         brand: 'Honda',
-        model: 'Civic Sport',
+        model: 'Honda Civic Sport',
         year: '2019',
         body: 'Hatchback',
         color: 'Red',
@@ -388,7 +388,7 @@ export const data: IData[] = [
     {
         num: '35',
         brand: 'Honda',
-        model: 'Civic Type R',
+        model: 'Honda Civic Type R',
         year: '2021',
         body: 'Hatchback',
         color: 'Blue',
@@ -399,7 +399,7 @@ export const data: IData[] = [
     {
         num: '36',
         brand: 'Honda',
-        model: 'Passport Touring',
+        model: 'Honda Passport Touring',
         year: '2019',
         body: 'SUV',
         color: 'Gray',
@@ -410,7 +410,7 @@ export const data: IData[] = [
     {
         num: '37',
         brand: 'Honda',
-        model: 'Ridgeline RTL',
+        model: 'Honda Ridgeline RTL',
         year: '2012',
         body: 'Pickup Truck',
         color: 'Red',
@@ -421,7 +421,7 @@ export const data: IData[] = [
     {
         num: '38',
         brand: 'Honda',
-        model: 'Ridgeline RTL-E',
+        model: 'Honda Ridgeline RTL-E',
         year: '2018',
         body: 'Pickup Truck',
         color: 'Blue',
@@ -432,7 +432,7 @@ export const data: IData[] = [
     {
         num: '39',
         brand: 'Honda',
-        model: 'Ridgeline RTL-E',
+        model: 'Honda Ridgeline RTL-E',
         year: '2019',
         body: 'Pickup Truck',
         color: 'White',
@@ -443,7 +443,7 @@ export const data: IData[] = [
     {
         num: '40',
         brand: 'Honda',
-        model: 'Ridgeline RTL-E',
+        model: 'Honda Ridgeline RTL-E',
         year: '2020',
         body: 'Pickup Truck',
         color: 'Gray',
@@ -453,8 +453,8 @@ export const data: IData[] = [
     },
     {
         num: '41',
-        brand: 'Mercedes-Benz',
-        model: 'A 220',
+        brand: 'Mercedes',
+        model: 'Mercedes A 220',
         year: '2019',
         body: 'Sedan',
         color: 'Red',
@@ -464,8 +464,8 @@ export const data: IData[] = [
     },
     {
         num: '42',
-        brand: 'Mercedes-Benz',
-        model: 'C 230',
+        brand: 'Mercedes',
+        model: 'Mercedes C 230',
         year: '2004',
         body: 'Sedan',
         color: 'Gray',
@@ -475,8 +475,8 @@ export const data: IData[] = [
     },
     {
         num: '43',
-        brand: 'Mercedes-Benz',
-        model: 'CLA 250',
+        brand: 'Mercedes',
+        model: 'Mercedes CLA 250',
         year: '2019',
         body: 'Sedan',
         color: 'White',
@@ -486,8 +486,8 @@ export const data: IData[] = [
     },
     {
         num: '44',
-        brand: 'Mercedes-Benz',
-        model: 'E 320',
+        brand: 'Mercedes',
+        model: 'Mercedes E 320',
         year: '2002',
         body: 'Sedan',
         color: 'Gray',
@@ -497,8 +497,8 @@ export const data: IData[] = [
     },
     {
         num: '45',
-        brand: 'Mercedes-Benz',
-        model: 'E 320',
+        brand: 'Mercedes',
+        model: 'Mercedes E 320',
         year: '2005',
         body: 'Sedan',
         color: 'Gray',
@@ -508,8 +508,8 @@ export const data: IData[] = [
     },
     {
         num: '46',
-        brand: 'Mercedes-Benz',
-        model: 'GL 320',
+        brand: 'Mercedes',
+        model: 'Mercedes GL 320',
         year: '2008',
         body: 'SUV',
         color: 'Black',
@@ -519,8 +519,8 @@ export const data: IData[] = [
     },
     {
         num: '47',
-        brand: 'Mercedes-Benz',
-        model: 'GLA 250',
+        brand: 'Mercedes',
+        model: 'Mercedes GLA 250',
         year: '2021',
         body: 'SUV',
         color: 'Black',
@@ -530,8 +530,8 @@ export const data: IData[] = [
     },
     {
         num: '48',
-        brand: 'Mercedes-Benz',
-        model: 'GLE 350',
+        brand: 'Mercedes',
+        model: 'Mercedes GLE 350',
         year: '2020',
         body: 'SUV',
         color: 'White',
@@ -541,8 +541,8 @@ export const data: IData[] = [
     },
     {
         num: '49',
-        brand: 'Mercedes-Benz',
-        model: 'S 550',
+        brand: 'Mercedes',
+        model: 'Mercedes S 550',
         year: '2015',
         body: 'Sedan',
         color: 'White',
@@ -552,8 +552,8 @@ export const data: IData[] = [
     },
     {
         num: '50',
-        brand: 'Mercedes-Benz',
-        model: 'SLK 320',
+        brand: 'Mercedes',
+        model: 'Mercedes SLK 320',
         year: '2001',
         body: 'Coupe',
         color: 'Blue',
@@ -564,7 +564,7 @@ export const data: IData[] = [
     {
         num: '51',
         brand: 'Porsche',
-        model: '911 Carrera',
+        model: 'Porsche 911 Carrera',
         year: '2020',
         body: 'Coupe',
         color: 'Gray',
@@ -575,7 +575,7 @@ export const data: IData[] = [
     {
         num: '52',
         brand: 'Porsche',
-        model: '911',
+        model: 'Porsche 911',
         year: '2021',
         body: 'Coupe',
         color: 'Red',
@@ -586,7 +586,7 @@ export const data: IData[] = [
     {
         num: '53',
         brand: 'Porsche',
-        model: 'Cayenne',
+        model: 'Porsche Cayenne',
         year: '2013',
         body: 'SUV',
         color: 'Blue',
@@ -597,7 +597,7 @@ export const data: IData[] = [
     {
         num: '54',
         brand: 'Porsche',
-        model: 'Cayenne',
+        model: 'Porsche Cayenne',
         year: '2014',
         body: 'SUV',
         color: 'White',
@@ -608,7 +608,7 @@ export const data: IData[] = [
     {
         num: '55',
         brand: 'Porsche',
-        model: 'Cayenne',
+        model: 'Porsche Cayenne',
         year: '2015',
         body: 'SUV',
         color: 'Black',
@@ -619,7 +619,7 @@ export const data: IData[] = [
     {
         num: '56',
         brand: 'Porsche',
-        model: 'Cayenne',
+        model: 'Porsche Cayenne',
         year: '2016',
         body: 'SUV',
         color: 'Black',
@@ -630,7 +630,7 @@ export const data: IData[] = [
     {
         num: '57',
         brand: 'Porsche',
-        model: 'Taycan 4S',
+        model: 'Porsche Taycan 4S',
         year: '2020',
         body: 'Hatchback',
         color: 'Red',
@@ -641,7 +641,7 @@ export const data: IData[] = [
     {
         num: '58',
         brand: 'Porsche',
-        model: 'Taycan 4S',
+        model: 'Porsche Taycan 4S',
         year: '2020',
         body: 'Hatchback',
         color: 'Gray',
@@ -652,7 +652,7 @@ export const data: IData[] = [
     {
         num: '59',
         brand: 'Porsche',
-        model: 'Taycan 4S',
+        model: 'Porsche Taycan 4S',
         year: '2021',
         body: 'Hatchback',
         color: 'Black',
@@ -663,7 +663,7 @@ export const data: IData[] = [
     {
         num: '60',
         brand: 'Porsche',
-        model: 'Taycan 4S',
+        model: 'Porsche Taycan 4S',
         year: '2021',
         body: 'Hatchback',
         color: 'Blue',
