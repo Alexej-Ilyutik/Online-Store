@@ -8,11 +8,13 @@
     width: 60rem;
 }
 
+.tools__sort,
 .tools__brand,
 .tools__body,
 .tools__transmission,
 .tools__fuel,
-.tools__color {
+.tools__color,
+.tools__popular {
     width: 100%;
     display: flex;
     gap: 1rem;
@@ -20,6 +22,7 @@
     align-items: center;
 }
 
+.tools__sort,
 .tools__transmission,
 .tools__fuel,
 .tools__color {
@@ -29,6 +32,10 @@
 .tools__brand,
 .tools__body {
     margin-bottom: 2.5rem;
+}
+
+.tools__popular {
+    margin-bottom: 12rem;
 }
 
 .tools__button {
@@ -55,7 +62,7 @@
 }
 
 .tools__title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 }
 
 .brand {
@@ -147,6 +154,69 @@
     }
     &:nth-child(6) {
         background-color: gray;
+    }
+}
+
+.tools__year {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.2rem;
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+.popular__input {
+    width: initial;
+    height: initial;
+    display: none;
+}
+
+.popular__label {
+    position: relative;
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    border: 0.2rem solid var(--range-color);
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+        background-color: var(--range-color);
+        transition: 0.5s;
+    }
+}
+
+.popular__input:checked + .popular__label::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    width: 6px;
+    height: 10px;
+    border: solid var(--white-color);
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.tools__reset {
+    width: 20rem;
+    height: 4rem;
+    background-color: var(--range-color);
+    font-size: 2.4rem;
+    border: 0.2rem solid var(--secondary-light);
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0.3rem 0.3rem 1rem rgba(5, 42, 77, 0.9);
+    &:hover {
+        transform: scale(1.05);
+    }
+    &:active {
+        background-color: var(--main-btn);
     }
 }
 
