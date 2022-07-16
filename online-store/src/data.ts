@@ -1,16 +1,17 @@
-export interface IData {
-    num: string;
-    brand: string;
-    model: string;
-    year: string;
-    body: string;
-    color: string;
-    transmission: string;
-    fuel: string;
-    favorite: boolean;
-}
+// export interface IData {
+//     num: string;
+//     brand: string;
+//     model: string;
+//     year: string;
+//     body: string;
+//     color: string;
+//     transmission: string;
+//     fuel: string;
+//     favorite: boolean;
+// }
+import { ICard } from './views/pages/PageRender';
 
-export const data: IData[] = [
+export const data: ICard[] = [
     {
         num: '1',
         brand: 'Audi',
@@ -247,7 +248,7 @@ export const data: IData[] = [
         brand: 'Ford',
         model: 'Ford F-150 Lariat',
         year: '2018',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Gray',
         transmission: 'Automatic',
         fuel: 'Gasoline',
@@ -258,7 +259,7 @@ export const data: IData[] = [
         brand: 'Ford',
         model: 'Ford F-250 XLT',
         year: '2017',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Red',
         transmission: 'Automanual',
         fuel: 'Diesel',
@@ -269,7 +270,7 @@ export const data: IData[] = [
         brand: 'Ford',
         model: 'Ford F-450 Platinum',
         year: '2019',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Gray',
         transmission: 'Automatic',
         fuel: 'Diesel',
@@ -412,7 +413,7 @@ export const data: IData[] = [
         brand: 'Honda',
         model: 'Honda Ridgeline RTL',
         year: '2012',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Red',
         transmission: 'Automatic',
         fuel: 'Gasoline',
@@ -423,7 +424,7 @@ export const data: IData[] = [
         brand: 'Honda',
         model: 'Honda Ridgeline RTL-E',
         year: '2018',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Blue',
         transmission: 'Automatic',
         fuel: 'Gasoline',
@@ -434,7 +435,7 @@ export const data: IData[] = [
         brand: 'Honda',
         model: 'Honda Ridgeline RTL-E',
         year: '2019',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'White',
         transmission: 'Automatic',
         fuel: 'Gasoline',
@@ -445,7 +446,7 @@ export const data: IData[] = [
         brand: 'Honda',
         model: 'Honda Ridgeline RTL-E',
         year: '2020',
-        body: 'Pickup Truck',
+        body: 'Pickup',
         color: 'Gray',
         transmission: 'Automatic',
         fuel: 'Gasoline',

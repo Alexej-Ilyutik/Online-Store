@@ -1,6 +1,7 @@
-import { PageRender } from './PageRender';
+import { PageRender, ICard } from './PageRender';
 import { CardAuto } from './Card';
-import { data } from '../../data';
+// import { data } from '../../data';
+// import { CardsSort } from '../../services/sort';
 import './../styles/main.scss';
 
 const MainPage: PageRender = {
@@ -9,11 +10,11 @@ const MainPage: PageRender = {
           <div class="tools__sort">
             <p class="tools__title">Sorting:</p>
             <select class="tools__select">
-              <option selected>Without</option>
-              <option>By name: "A" &#8658; "Z"</option>
-              <option>By name: "Z" &#8658; "A"</option>
-              <option>By year: &#8657;</option>
-              <option>By year: &#8659;</option>
+              <option value="without" selected>Without</option>
+              <option value="sort-name-max">By name: "A" &#8658; "Z"</option>
+              <option value="sort-name-min">By name: "Z" &#8658; "A"</option>
+              <option value="sort-year-max">By year: &#8657;</option>
+              <option value="sort-year-min">By year: &#8659;</option>
              </select>
           </div>
           <div class="tools__brand">
@@ -79,23 +80,20 @@ const MainPage: PageRender = {
     },
 };
 
-// const FEED_CONTAINER = document.querySelector('.main__feed');
+function renderCards(array: ICard[]) {
+    const FEED_CONTAINER = null || document.querySelector('.main__feed');
+    FEED_CONTAINER.innerHTML = '';
 
-// console.log(FEED_CONTAINER);
-
-function renderCards(elem: HTMLElement) {
-    elem.innerHTML = '';
-
-    for (let i = 0; i < data.length; i++) {
-        const numImg = data[i]['num'];
-        const brandAuto = data[i]['brand'];
-        const modelAuto = data[i]['model'];
-        const yearAuto = data[i]['year'];
-        const bodyType = data[i]['body'];
-        const colorBody = data[i]['color'];
-        const transmissionType = data[i]['transmission'];
-        const fuelType = data[i]['fuel'];
-        const favoriteAuto = data[i]['favorite'];
+    for (let i = 0; i < array.length; i++) {
+        const numImg = array[i]['num'];
+        const brandAuto = array[i]['brand'];
+        const modelAuto = array[i]['model'];
+        const yearAuto = array[i]['year'];
+        const bodyType = array[i]['body'];
+        const colorBody = array[i]['color'];
+        const transmissionType = array[i]['transmission'];
+        const fuelType = array[i]['fuel'];
+        const favoriteAuto = array[i]['favorite'];
 
         const newCard = new CardAuto(
             numImg,
@@ -109,10 +107,65 @@ function renderCards(elem: HTMLElement) {
             favoriteAuto
         );
 
-        elem.appendChild(newCard.createCard());
+        FEED_CONTAINER.appendChild(newCard.createCard());
     }
 }
 
-// renderCards();
+function filterByType(array: ICard[], key: string, val: string) {
+    const newArr = array.filter((el) => el[key] === val);
+    return newArr;
+}
 
-export { MainPage, renderCards };
+// const currentCardArr: ICard[] = [...data];
+
+// let currentSort = 'without';
+
+// function sortCards() {
+//     const select = <HTMLSelectElement>document.querySelector('.tools__select');
+//     const optionValue: string = select.value;
+//     console.log(optionValue);
+//     const sortData = new CardsSort(currentCardArr);
+//     switch (optionValue) {
+//         case 'sort-name-max':
+//             sortData.sortAtoZ();
+//             renderCards(currentCardArr);
+//             currentSort = 'sort-name-max';
+//             break;
+//         case 'sort-name-min':
+//             sortData.sortZtoA();
+//             renderCards(currentCardArr);
+//             currentSort = 'sort-name-min';
+//             break;
+//         case 'sort-year-max':
+//             sortData.sortYearMax();
+//             renderCards(currentCardArr);
+//             currentSort = 'sort-year-max';
+//             break;
+//         case 'sort-year-min':
+//             sortData.sortYearMin();
+//             renderCards(currentCardArr);
+//             // eslint-disable-next-line @typescript-eslint/no-unused-vars
+//             currentSort = 'sort-year-min';
+//             break;
+//     }
+// }
+
+// function whatSort() {
+//     const sortData = new CardsSort(currentCardArr);
+//     switch (currentSort) {
+//         case 'sort-name-max':
+//             sortData.sortAtoZ();
+//             break;
+//         case 'sort-name-min':
+//             sortData.sortZtoA();
+//             break;
+//         case 'sort-year-max':
+//             sortData.sortYearMax();
+//             break;
+//         case 'sort-year-min':
+//             sortData.sortYearMin();
+//             break;
+//     }
+// }
+
+export { MainPage, renderCards, filterByType };

@@ -46,7 +46,7 @@
     transition: 0.4s;
     position: relative;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.05);
         &::after {
             content: attr(data-filter);
             position: absolute;
@@ -291,4 +291,19 @@
             }
         }
     }
+}
+
+.brand-active,
+.body-active,
+.color-active {
+    transform: scale(0.95);
+}
+
+.brand-active,
+.body-active {
+    filter: invert(42%) sepia(97%) saturate(365%) hue-rotate(141deg) brightness(90%) contrast(88%);
+}
+
+.color-active {
+    border: 0.3rem solid var(--range-color);
 }
