@@ -9,7 +9,7 @@ const MainPage: PageRender = {
         const view = `<aside class="main__tools tools">
           <div class="tools__sort">
             <p class="tools__title">Sorting:</p>
-            <select class="tools__select">
+            <select class="tools__select sort">
               <option value="without" selected>Without</option>
               <option value="sort-name-max">By name: "A" &#8658; "Z"</option>
               <option value="sort-name-min">By name: "Z" &#8658; "A"</option>

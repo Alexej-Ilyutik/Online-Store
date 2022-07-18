@@ -7,6 +7,7 @@ import { RangeSlider } from './services/rangeSlider';
 import { data } from './data';
 import { ICard } from './views/pages/PageRender';
 import { IFilter } from './services/filter';
+import { CardsSort } from './services/sort';
 
 customElements.define('my-range-slider', RangeSlider);
 
@@ -53,12 +54,14 @@ async function router() {
     let colorFilter = false;
     let transmissionFilter = false;
     let fuelFilter = false;
+    let sortFilter = false;
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
     let colorArr: ICard[] = [];
     let transmissionArr: ICard[] = [];
     let fuelArr: ICard[] = [];
+    let sortArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
         let currentCardArr: ICard[] = [...data];
@@ -138,6 +141,31 @@ async function router() {
                 const currentArr = filterByType(currentCardArr, 'fuel', (<HTMLInputElement>target).value);
                 fuelFilter = true;
                 fuelArr = [...currentArr];
+                console.log(currentArr);
+            }
+        }
+
+        if (target.classList.contains('sort')) {
+            if ((<HTMLInputElement>target).value == 'Without') {
+                sortArr = [...data];
+            } else {
+                sortFilter = true;
+                const currentArr = new CardsSort(currentCardArr);
+                switch ((<HTMLInputElement>target).value) {
+                    case 'sort-name-max':
+                        currentArr.sortAtoZ();
+                        break;
+                    case 'sort-name-min':
+                        currentArr.sortZtoA();
+                        break;
+                    case 'sort-year-max':
+                        currentArr.sortYearMax();
+                        break;
+                    case 'sort-year-min':
+                        currentArr.sortYearMin();
+                        break;
+                }
+                sortArr = [...currentArr.cardArray];
             }
         }
 
@@ -171,6 +199,10 @@ async function router() {
 
         if (fuelFilter) {
             currentCardArr = [...fuelArr];
+        }
+
+        if (sortFilter) {
+            currentCardArr = [...sortArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);
