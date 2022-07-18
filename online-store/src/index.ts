@@ -51,10 +51,14 @@ async function router() {
     let brandFilter = false;
     let bodyFilter = false;
     let colorFilter = false;
+    let transmissionFilter = false;
+    let fuelFilter = false;
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
     let colorArr: ICard[] = [];
+    let transmissionArr: ICard[] = [];
+    let fuelArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
         let currentCardArr: ICard[] = [...data];
@@ -117,9 +121,26 @@ async function router() {
             }
         }
 
-        if (target.classList.contains('tools__select')) {
-            console.log(target);
+        if (target.classList.contains('transmission')) {
+            if ((<HTMLInputElement>target).value == 'All') {
+                transmissionArr = [...data];
+            } else {
+                const currentArr = filterByType(currentCardArr, 'transmission', (<HTMLInputElement>target).value);
+                transmissionFilter = true;
+                transmissionArr = [...currentArr];
+            }
         }
+
+        if (target.classList.contains('fuel')) {
+            if ((<HTMLInputElement>target).value == 'All') {
+                fuelArr = [...data];
+            } else {
+                const currentArr = filterByType(currentCardArr, 'fuel', (<HTMLInputElement>target).value);
+                fuelFilter = true;
+                fuelArr = [...currentArr];
+            }
+        }
+
         // if (brandFilter) {
         //     if (bodyFilter) {
         //         currentCardArr = [...bodyArr];
@@ -142,6 +163,14 @@ async function router() {
 
         if (colorFilter) {
             currentCardArr = [...colorArr];
+        }
+
+        if (transmissionFilter) {
+            currentCardArr = [...transmissionArr];
+        }
+
+        if (fuelFilter) {
+            currentCardArr = [...fuelArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);

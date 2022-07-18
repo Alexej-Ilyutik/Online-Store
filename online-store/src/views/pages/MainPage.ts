@@ -37,19 +37,19 @@ const MainPage: PageRender = {
           <div class="tools__transmission">
             <p class="tools__title">Transmission:</p>
             <select class="tools__select transmission">
-              <option selected>All</option>
-              <option>Automatic</option>
-              <option>Manual</option>
-              <option>Automanual</option>
+              <option value="All" selected>All</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+              <option value="Automanual">Automanual</option>
              </select>
           </div>
           <div class="tools__fuel">
             <p class="tools__title">Fuel type:</p>
             <select class="tools__select fuel">
-              <option selected>All</option>
-              <option>Gasoline</option>
-              <option>Diesel</option>
-              <option>Electric</option>
+              <option value="All" selected>All</option>
+              <option value="Gasoline">Gasoline</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Electric">Electric</option>
              </select>
           </div>
           <div class="tools__color">
