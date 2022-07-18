@@ -4,7 +4,7 @@ import './../styles/header.scss';
 const Header: PageRender = {
     render: async () => {
         const view = `<figure class="header__logo">
-          <img src="../../assets/svg/car-logo.svg" alt="Logo" />
+          <img src="./assets/svg/car-logo.svg" alt="Logo" />
           <figcaption>Online Store</figcaption>
         </figure>
          <div class="header__tools tools">

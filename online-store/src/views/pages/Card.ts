@@ -16,7 +16,7 @@ class CardAuto {
         card.classList.add('feed__card');
         card.innerHTML = `
                 <div class="card__img">
-                  <img src="../../assets/images/${this.num}.webp" alt="${this.brand}">
+                  <img src="./assets/images/${this.num}.webp" alt="${this.brand}">
                 </div>
                 <div class="card__description">
                   <h2 class="card__title">${this.brand}</h2>
