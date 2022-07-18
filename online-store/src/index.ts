@@ -56,6 +56,7 @@ async function router() {
     let fuelFilter = false;
     let sortFilter = false;
     let yearFilter = false;
+    let popFilter = false;
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
@@ -64,6 +65,7 @@ async function router() {
     let fuelArr: ICard[] = [];
     let sortArr: ICard[] = [];
     let yearArr: ICard[] = [];
+    let popArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
         let currentCardArr: ICard[] = [...data];
@@ -181,6 +183,12 @@ async function router() {
             yearArr = [...currentArr];
         }
 
+        if (target.classList.contains('popular__input')) {
+            popFilter = true;
+            const currentArr = filterByType(currentCardArr, 'favorite', true);
+            popArr = [...currentArr];
+        }
+
         if (brandFilter) {
             currentCardArr = [...brandArr];
         }
@@ -207,6 +215,10 @@ async function router() {
 
         if (yearFilter) {
             currentCardArr = [...yearArr];
+        }
+
+        if (popFilter) {
+            currentCardArr = [...popArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);

@@ -111,7 +111,7 @@ function renderCards(array: ICard[]) {
     }
 }
 
-function filterByType(array: ICard[], key: string, val: string) {
+function filterByType(array: ICard[], key: string, val: string | boolean) {
     const newArr = array.filter((el) => el[key] === val);
     return newArr;
 }
