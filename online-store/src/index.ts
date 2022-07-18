@@ -40,94 +40,108 @@ async function router() {
         Sedan: false,
     };
 
+    const filterColorObj: IFilter = {
+        Black: false,
+        White: false,
+        Blue: false,
+        Red: false,
+        Gray: false,
+    };
+
     let brandFilter = false;
     let bodyFilter = false;
+    let colorFilter = false;
+
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
-    let currentCardArr: ICard[] = [...data];
+    let colorArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
+        let currentCardArr: ICard[] = [...data];
         const target = e.target as HTMLElement;
         const currentValue = target.dataset.filter;
 
         if (target.classList.contains('brand')) {
             brandFilter = true;
+            brandArr = [];
             if (!target.classList.contains('brand-active')) {
                 target.classList.add('brand-active');
                 filterBrandObj[currentValue] = true;
-                for (const brandName in filterBrandObj) {
-                    if (filterBrandObj[brandName]) {
-                        const currentCardArr = filterByType(data, 'brand', brandName);
-                        brandArr = [...brandArr, ...currentCardArr];
-                    }
-                }
             } else if (target.classList.contains('brand-active')) {
                 target.classList.remove('brand-active');
                 filterBrandObj[currentValue] = false;
-                brandArr = [];
-                for (const brandName in filterBrandObj) {
-                    if (filterBrandObj[brandName]) {
-                        const currentCardArr = filterByType(data, 'brand', brandName);
-                        brandArr = [...brandArr, ...currentCardArr];
-                    }
+            }
+            for (const brandName in filterBrandObj) {
+                if (filterBrandObj[brandName]) {
+                    const currentArr = filterByType(currentCardArr, 'brand', brandName);
+                    brandArr = [...brandArr, ...currentArr];
                 }
             }
         }
 
         if (target.classList.contains('body')) {
             bodyFilter = true;
-            if (!target.classList.contains('brand-active')) {
-                target.classList.add('brand-active');
+            bodyArr = [];
+            if (!target.classList.contains('body-active')) {
+                target.classList.add('body-active');
                 filterBodyObj[currentValue] = true;
-                for (const bodyName in filterBodyObj) {
-                    if (filterBodyObj[bodyName]) {
-                        if (brandFilter) {
-                            const currentCardArr = filterByType(brandArr, 'body', bodyName);
-                            bodyArr = [...bodyArr, ...currentCardArr];
-                        } else {
-                            const currentCardArr = filterByType(data, 'body', bodyName);
-                            bodyArr = [...bodyArr, ...currentCardArr];
-                        }
-                    }
-                }
-            } else if (target.classList.contains('brand-active')) {
-                target.classList.remove('brand-active');
+            } else if (target.classList.contains('body-active')) {
+                target.classList.remove('body-active');
                 filterBodyObj[currentValue] = false;
-                bodyArr = [];
-                for (const bodyName in filterBodyObj) {
-                    if (filterBodyObj[bodyName]) {
-                        if (brandFilter) {
-                            const currentCardArr = filterByType(brandArr, 'body', bodyName);
-                            bodyArr = [...bodyArr, ...currentCardArr];
-                        } else {
-                            const currentCardArr = filterByType(data, 'body', bodyName);
-                            bodyArr = [...bodyArr, ...currentCardArr];
-                        }
-                    }
+            }
+            for (const bodyName in filterBodyObj) {
+                if (filterBodyObj[bodyName]) {
+                    const currentArr = filterByType(currentCardArr, 'body', bodyName);
+                    bodyArr = [...bodyArr, ...currentArr];
                 }
             }
         }
-        // if (target.classList.contains('color')) {
-        //     target.classList.toggle('color-active');
-        // }
-        // console.log(filterBrandArr);
-        // if (target.classList.contains('brand')) {
-        //     console.log('brand');
-        // }
-        // if (target.classList.contains('body')) {
-        //     console.log('body');
-        // }
 
-        if (brandFilter) {
-            if (bodyFilter) {
-                currentCardArr = [...bodyArr];
-            } else {
-                currentCardArr = [...brandArr];
+        if (target.classList.contains('color')) {
+            colorFilter = true;
+            colorArr = [];
+
+            if (!target.classList.contains('color-active')) {
+                target.classList.add('color-active');
+                filterColorObj[currentValue] = true;
+            } else if (target.classList.contains('color-active')) {
+                target.classList.remove('color-active');
+                filterColorObj[currentValue] = false;
             }
-        } else if (bodyFilter) {
+
+            for (const bodyColor in filterColorObj) {
+                if (filterColorObj[bodyColor]) {
+                    const currentArr = filterByType(currentCardArr, 'color', bodyColor);
+                    colorArr = [...colorArr, ...currentArr];
+                }
+            }
+        }
+
+        if (target.classList.contains('tools__select')) {
+            console.log(target);
+        }
+        // if (brandFilter) {
+        //     if (bodyFilter) {
+        //         currentCardArr = [...bodyArr];
+        //     } else {
+        //         currentCardArr = [...brandArr];
+        //     }
+
+        // } else if (bodyFilter) {
+        //     currentCardArr = [...bodyArr];
+        // } else {
+        //     currentCardArr = [...data];
+        // }
+        if (brandFilter) {
+            currentCardArr = [...brandArr];
+        }
+
+        if (bodyFilter) {
             currentCardArr = [...bodyArr];
-        } else {
-            currentCardArr = [...data];
+        }
+
+        if (colorFilter) {
+            currentCardArr = [...colorArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);
