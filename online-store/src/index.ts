@@ -257,6 +257,11 @@ async function router() {
             console.log(target);
         }
     });
+    console.log(`'
+    Привет!
+    Это еще не всё! Я могу больше))
+    Буду благодарен, если проверите мою работу позже.
+    Хорошего дня и успехов в учебе! ;)'`);
 }
 
 window.addEventListener('load', windowsOnLoad);
