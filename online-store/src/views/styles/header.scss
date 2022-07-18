@@ -72,7 +72,7 @@
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     position: relative;
-    top: .8rem;
+    top: 0.8rem;
     .basket__img {
         height: 3.5rem;
         width: 4.5rem;
@@ -82,18 +82,18 @@
     .basket__info {
         position: relative;
         background-color: var(--red-color);
-        width: 1.8rem;
-        height: 1.8rem;
+        width: 2rem;
+        height: 2rem;
         border-radius: 50%;
-        bottom: 3.3rem;
+        bottom: 3.4rem;
         left: 2.9rem;
         text-align: center;
         .basket__count {
             font-size: 1.4rem;
-            line-height: 1.8rem;
+            line-height: 2rem;
         }
     }
     &:hover {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
 }

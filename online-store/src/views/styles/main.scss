@@ -265,6 +265,7 @@
     gap: 1rem;
     max-width: 46rem;
     max-height: 20rem;
+    cursor: pointer;
     .card__img {
         width: 25rem;
         min-width: 25rem;
@@ -292,6 +293,12 @@
             }
         }
     }
+}
+
+.card-active{
+    transform: scale(0.9);
+    border: .5rem solid var(--main-color);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
 }
 
 .brand-active,

@@ -62,7 +62,7 @@ const MainPage: PageRender = {
           </div>
           <div class="tools__year">
             <p class="tools__title">Year:</p>
-            <my-range-slider id="range-slider-year" minValue="2000" maxValue="2021" step="1" lineWidth="260" startValue="2000" endValue="2021" runerSize="20"></my-range-slider>
+            <my-range-slider id="range-slider-year" minValue="2000" maxValue="2021" step="1" lineWidth="250" startValue="2000" endValue="2021" runerSize="20"></my-range-slider>
           </div>
           <div class="tools__popular">
             <p class="tools__title">Popular:</p>

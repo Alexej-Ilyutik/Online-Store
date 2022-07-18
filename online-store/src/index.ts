@@ -198,6 +198,11 @@ async function router() {
             searchArr = [...currentArr];
         }
 
+        // if (target.closest('.feed__card')) {
+        //     target.classList.add('card-active');
+        //     console.log(target);
+        // }
+
         if (brandFilter) {
             currentCardArr = [...brandArr];
         }
@@ -242,6 +247,15 @@ async function router() {
         renderCards(currentCardArr);
 
         // console.log(currentCardArr);
+    });
+
+    const FEED = document.querySelector('.main__feed');
+    FEED.addEventListener('click', (e: Event) => {
+        const target = e.target as HTMLElement;
+        if (target.classList.contains('feed__card')) {
+            target.classList.add('card-active');
+            console.log(target);
+        }
     });
 }
 
