@@ -126,4 +126,17 @@ function filterByYear(array: ICard[], min: number, max: number) {
     return newArr;
 }
 
-export { MainPage, renderCards, filterByType, filterByYear };
+function searchCard(array: ICard[], str: string) {
+    const newArr: ICard[] = [];
+    // str = str.replace(/\s+/g, ' ').trim().toLowerCase();
+    str = str.trim().toLowerCase();
+    array.forEach((el) => {
+        const model = el.model.toLowerCase();
+        if (model.includes(str)) {
+            newArr.push(el);
+        }
+    });
+    return newArr;
+}
+
+export { MainPage, renderCards, filterByType, filterByYear, searchCard };

@@ -9,8 +9,8 @@ const Header: PageRender = {
         </figure>
          <div class="header__tools tools">
           <div class="tools__search">
-            <input type="search" placeholder="Search here..." required>
-            <button type="submit">Search</button>
+            <input class="search" type="search" placeholder="Search here..." required>
+            <button class="search-btn" type="submit">Search</button>
           </div>
           <div class="tools__basket basket">
             <div class="basket__img"></div>

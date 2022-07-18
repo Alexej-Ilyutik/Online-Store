@@ -2,7 +2,7 @@ import './views/styles/index.scss';
 
 import { Header } from './views/components/header';
 import { Footer } from './views/components/footer';
-import { MainPage, renderCards, filterByType, filterByYear } from './views/pages/mainPage';
+import { MainPage, renderCards, filterByType, filterByYear, searchCard } from './views/pages/mainPage';
 import { RangeSlider } from './services/rangeSlider';
 import { data } from './data';
 import { ICard } from './views/pages/PageRender';
@@ -57,6 +57,7 @@ async function router() {
     let sortFilter = false;
     let yearFilter = false;
     let popFilter = false;
+    let searchFilter = false;
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
@@ -66,6 +67,7 @@ async function router() {
     let sortArr: ICard[] = [];
     let yearArr: ICard[] = [];
     let popArr: ICard[] = [];
+    let searchArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
         let currentCardArr: ICard[] = [...data];
@@ -189,6 +191,13 @@ async function router() {
             popArr = [...currentArr];
         }
 
+        if (target.classList.contains('search-btn')) {
+            const SEARCH = document.querySelector('.search');
+            searchFilter = true;
+            const currentArr = searchCard(currentCardArr, (<HTMLInputElement>SEARCH).value);
+            searchArr = [...currentArr];
+        }
+
         if (brandFilter) {
             currentCardArr = [...brandArr];
         }
@@ -219,6 +228,10 @@ async function router() {
 
         if (popFilter) {
             currentCardArr = [...popArr];
+        }
+
+        if (searchFilter) {
+            currentCardArr = [...searchArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);
