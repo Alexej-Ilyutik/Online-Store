@@ -2,7 +2,7 @@ import './views/styles/index.scss';
 
 import { Header } from './views/components/header';
 import { Footer } from './views/components/footer';
-import { MainPage, renderCards, filterByType } from './views/pages/mainPage';
+import { MainPage, renderCards, filterByType, filterByYear } from './views/pages/mainPage';
 import { RangeSlider } from './services/rangeSlider';
 import { data } from './data';
 import { ICard } from './views/pages/PageRender';
@@ -55,6 +55,7 @@ async function router() {
     let transmissionFilter = false;
     let fuelFilter = false;
     let sortFilter = false;
+    let yearFilter = false;
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
@@ -62,6 +63,7 @@ async function router() {
     let transmissionArr: ICard[] = [];
     let fuelArr: ICard[] = [];
     let sortArr: ICard[] = [];
+    let yearArr: ICard[] = [];
 
     WRAPPER.addEventListener('click', (e: Event) => {
         let currentCardArr: ICard[] = [...data];
@@ -169,18 +171,16 @@ async function router() {
             }
         }
 
-        // if (brandFilter) {
-        //     if (bodyFilter) {
-        //         currentCardArr = [...bodyArr];
-        //     } else {
-        //         currentCardArr = [...brandArr];
-        //     }
+        if (target.classList.contains('runner-thumb')) {
+            yearFilter = true;
+            const yearSlider = <RangeSlider>document.getElementById('range-slider-year');
+            const yearStartVal = +yearSlider.startValue;
+            const yearEndVal = +yearSlider.endValue;
 
-        // } else if (bodyFilter) {
-        //     currentCardArr = [...bodyArr];
-        // } else {
-        //     currentCardArr = [...data];
-        // }
+            const currentArr = filterByYear(currentCardArr, yearStartVal, yearEndVal);
+            yearArr = [...currentArr];
+        }
+
         if (brandFilter) {
             currentCardArr = [...brandArr];
         }
@@ -203,6 +203,10 @@ async function router() {
 
         if (sortFilter) {
             currentCardArr = [...sortArr];
+        }
+
+        if (yearFilter) {
+            currentCardArr = [...yearArr];
         }
         // console.log(currentCardArr);
         // console.log(brandFilter);

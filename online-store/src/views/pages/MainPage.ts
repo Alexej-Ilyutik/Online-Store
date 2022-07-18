@@ -62,7 +62,7 @@ const MainPage: PageRender = {
           </div>
           <div class="tools__year">
             <p class="tools__title">Year:</p>
-            <my-range-slider id="range-slider-year" minValue="2000" maxValue="2021" step="1" lineWidth="260" startValue="2005" endValue="2018" runerSize="16"></my-range-slider>
+            <my-range-slider id="range-slider-year" minValue="2000" maxValue="2021" step="1" lineWidth="260" startValue="2000" endValue="2021" runerSize="20"></my-range-slider>
           </div>
           <div class="tools__popular">
             <p class="tools__title">Popular:</p>
@@ -116,56 +116,14 @@ function filterByType(array: ICard[], key: string, val: string) {
     return newArr;
 }
 
-// const currentCardArr: ICard[] = [...data];
+function filterByYear(array: ICard[], min: number, max: number) {
+    const newArr: ICard[] = [];
+    array.forEach((el) => {
+        if (+el.year >= min && +el.year <= max) {
+            newArr.push(el);
+        }
+    });
+    return newArr;
+}
 
-// let currentSort = 'without';
-
-// function sortCards() {
-//     const select = <HTMLSelectElement>document.querySelector('.tools__select');
-//     const optionValue: string = select.value;
-//     console.log(optionValue);
-//     const sortData = new CardsSort(currentCardArr);
-//     switch (optionValue) {
-//         case 'sort-name-max':
-//             sortData.sortAtoZ();
-//             renderCards(currentCardArr);
-//             currentSort = 'sort-name-max';
-//             break;
-//         case 'sort-name-min':
-//             sortData.sortZtoA();
-//             renderCards(currentCardArr);
-//             currentSort = 'sort-name-min';
-//             break;
-//         case 'sort-year-max':
-//             sortData.sortYearMax();
-//             renderCards(currentCardArr);
-//             currentSort = 'sort-year-max';
-//             break;
-//         case 'sort-year-min':
-//             sortData.sortYearMin();
-//             renderCards(currentCardArr);
-//             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-//             currentSort = 'sort-year-min';
-//             break;
-//     }
-// }
-
-// function whatSort() {
-//     const sortData = new CardsSort(currentCardArr);
-//     switch (currentSort) {
-//         case 'sort-name-max':
-//             sortData.sortAtoZ();
-//             break;
-//         case 'sort-name-min':
-//             sortData.sortZtoA();
-//             break;
-//         case 'sort-year-max':
-//             sortData.sortYearMax();
-//             break;
-//         case 'sort-year-min':
-//             sortData.sortYearMin();
-//             break;
-//     }
-// }
-
-export { MainPage, renderCards, filterByType };
+export { MainPage, renderCards, filterByType, filterByYear };

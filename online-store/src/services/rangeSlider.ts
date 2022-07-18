@@ -128,13 +128,13 @@ class RangeSlider extends HTMLElement {
         linesContaner.className = 'range-slider__range-line-container';
         linesContaner.style.width = `${this.lineWidth}px`;
 
-        this.startRunner.className = 'range-slider__runer-left';
+        this.startRunner.className = 'range-slider__runer-left runner-thumb';
         this.startRunner.style.width = `${this.runnerSize}px`;
         this.startRunner.style.height = `${this.runnerSize}px`;
         this.startRunner.style.cursor = 'grab';
         this.startRunner.addEventListener('mousedown', this.runnerOnMouseDown);
 
-        this.endRunner.className = 'range-slider__runer-right';
+        this.endRunner.className = 'range-slider__runer-right runner-thumb';
         this.endRunner.style.width = `${this.runnerSize}px`;
         this.endRunner.style.height = `${this.runnerSize}px`;
         this.endRunner.style.cursor = 'grab';
