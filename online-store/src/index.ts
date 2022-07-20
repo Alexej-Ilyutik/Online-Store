@@ -73,6 +73,10 @@ async function router() {
     let popArr: ICard[] = [];
     let searchArr: ICard[] = [];
 
+    let brandCount = 0;
+    let bodyCount = 0;
+    let colorCount = 0;
+
     WRAPPER.addEventListener('click', async (e: Event) => {
         let currentCardArr: ICard[] = [...data];
         const target = e.target as HTMLElement;
@@ -84,16 +88,24 @@ async function router() {
             if (!target.classList.contains('brand-active')) {
                 target.classList.add('brand-active');
                 filterBrandObj[currentValue] = true;
+                brandCount++;
             } else if (target.classList.contains('brand-active')) {
                 target.classList.remove('brand-active');
                 filterBrandObj[currentValue] = false;
+                brandCount--;
             }
-            for (const brandName in filterBrandObj) {
-                if (filterBrandObj[brandName]) {
-                    const currentArr = filterByType(currentCardArr, 'brand', brandName);
-                    brandArr = [...brandArr, ...currentArr];
+            if (brandCount !== 0) {
+                for (const brandName in filterBrandObj) {
+                    if (filterBrandObj[brandName]) {
+                        const currentArr = filterByType(currentCardArr, 'brand', brandName);
+                        brandArr = [...brandArr, ...currentArr];
+                    }
                 }
+            } else {
+                brandArr = [...currentCardArr];
             }
+
+            console.log(brandCount);
         }
 
         if (target.classList.contains('body')) {
@@ -102,15 +114,22 @@ async function router() {
             if (!target.classList.contains('body-active')) {
                 target.classList.add('body-active');
                 filterBodyObj[currentValue] = true;
+                bodyCount++;
             } else if (target.classList.contains('body-active')) {
                 target.classList.remove('body-active');
                 filterBodyObj[currentValue] = false;
+                bodyCount--;
             }
-            for (const bodyName in filterBodyObj) {
-                if (filterBodyObj[bodyName]) {
-                    const currentArr = filterByType(currentCardArr, 'body', bodyName);
-                    bodyArr = [...bodyArr, ...currentArr];
+
+            if (bodyCount !== 0) {
+                for (const bodyName in filterBodyObj) {
+                    if (filterBodyObj[bodyName]) {
+                        const currentArr = filterByType(currentCardArr, 'body', bodyName);
+                        bodyArr = [...bodyArr, ...currentArr];
+                    }
                 }
+            } else {
+                bodyArr = [...currentCardArr];
             }
         }
 
@@ -121,16 +140,22 @@ async function router() {
             if (!target.classList.contains('color-active')) {
                 target.classList.add('color-active');
                 filterColorObj[currentValue] = true;
+                colorCount++;
             } else if (target.classList.contains('color-active')) {
                 target.classList.remove('color-active');
                 filterColorObj[currentValue] = false;
+                colorCount--;
             }
 
-            for (const bodyColor in filterColorObj) {
-                if (filterColorObj[bodyColor]) {
-                    const currentArr = filterByType(currentCardArr, 'color', bodyColor);
-                    colorArr = [...colorArr, ...currentArr];
+            if (colorCount !== 0) {
+                for (const bodyColor in filterColorObj) {
+                    if (filterColorObj[bodyColor]) {
+                        const currentArr = filterByType(currentCardArr, 'color', bodyColor);
+                        colorArr = [...colorArr, ...currentArr];
+                    }
                 }
+            } else {
+                colorArr = [...currentCardArr];
             }
         }
 
