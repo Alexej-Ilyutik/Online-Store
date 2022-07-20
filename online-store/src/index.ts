@@ -18,7 +18,9 @@ async function router() {
     const footer = null || document.getElementById('footer');
     const mainPage = null || document.getElementById('main');
 
-    header.innerHTML = await Header.render();
+    let count = 0;
+
+    header.innerHTML = await Header.render(count);
     footer.innerHTML = await Footer.render();
     mainPage.innerHTML = await MainPage.render();
 
@@ -49,15 +51,17 @@ async function router() {
         Gray: false,
     };
 
-    let brandFilter = false;
-    let bodyFilter = false;
-    let colorFilter = false;
-    let transmissionFilter = false;
-    let fuelFilter = false;
-    let sortFilter = false;
-    let yearFilter = false;
-    let popFilter = false;
-    let searchFilter = false;
+    const filterObj: IFilter = {
+        brandFilter: false,
+        bodyFilter: false,
+        colorFilter: false,
+        transmissionFilter: false,
+        fuelFilter: false,
+        sortFilter: false,
+        yearFilter: false,
+        popFilter: false,
+        searchFilter: false,
+    };
 
     let brandArr: ICard[] = [];
     let bodyArr: ICard[] = [];
@@ -69,13 +73,13 @@ async function router() {
     let popArr: ICard[] = [];
     let searchArr: ICard[] = [];
 
-    WRAPPER.addEventListener('click', (e: Event) => {
+    WRAPPER.addEventListener('click', async (e: Event) => {
         let currentCardArr: ICard[] = [...data];
         const target = e.target as HTMLElement;
         const currentValue = target.dataset.filter;
 
         if (target.classList.contains('brand')) {
-            brandFilter = true;
+            filterObj.brandFilter = true;
             brandArr = [];
             if (!target.classList.contains('brand-active')) {
                 target.classList.add('brand-active');
@@ -93,7 +97,7 @@ async function router() {
         }
 
         if (target.classList.contains('body')) {
-            bodyFilter = true;
+            filterObj.bodyFilter = true;
             bodyArr = [];
             if (!target.classList.contains('body-active')) {
                 target.classList.add('body-active');
@@ -111,7 +115,7 @@ async function router() {
         }
 
         if (target.classList.contains('color')) {
-            colorFilter = true;
+            filterObj.colorFilter = true;
             colorArr = [];
 
             if (!target.classList.contains('color-active')) {
@@ -135,7 +139,7 @@ async function router() {
                 transmissionArr = [...data];
             } else {
                 const currentArr = filterByType(currentCardArr, 'transmission', (<HTMLInputElement>target).value);
-                transmissionFilter = true;
+                filterObj.transmissionFilter = true;
                 transmissionArr = [...currentArr];
             }
         }
@@ -145,7 +149,7 @@ async function router() {
                 fuelArr = [...data];
             } else {
                 const currentArr = filterByType(currentCardArr, 'fuel', (<HTMLInputElement>target).value);
-                fuelFilter = true;
+                filterObj.fuelFilter = true;
                 fuelArr = [...currentArr];
                 console.log(currentArr);
             }
@@ -155,7 +159,7 @@ async function router() {
             if ((<HTMLInputElement>target).value == 'Without') {
                 sortArr = [...data];
             } else {
-                sortFilter = true;
+                filterObj.sortFilter = true;
                 const currentArr = new CardsSort(currentCardArr);
                 switch ((<HTMLInputElement>target).value) {
                     case 'sort-name-max':
@@ -176,7 +180,7 @@ async function router() {
         }
 
         if (target.classList.contains('runner-thumb')) {
-            yearFilter = true;
+            filterObj.yearFilter = true;
             const yearSlider = <RangeSlider>document.getElementById('range-slider-year');
             const yearStartVal = +yearSlider.startValue;
             const yearEndVal = +yearSlider.endValue;
@@ -186,56 +190,90 @@ async function router() {
         }
 
         if (target.classList.contains('popular__input')) {
-            popFilter = true;
-            const currentArr = filterByType(currentCardArr, 'favorite', true);
-            popArr = [...currentArr];
+            if ((<HTMLInputElement>target).checked) {
+                filterObj.popFilter = true;
+                const currentArr = filterByType(currentCardArr, 'favorite', true);
+                popArr = [...currentArr];
+            } else {
+                filterObj.popFilter = false;
+            }
         }
 
         if (target.classList.contains('search-btn')) {
             const SEARCH = document.querySelector('.search');
-            searchFilter = true;
+            filterObj.searchFilter = true;
             const currentArr = searchCard(currentCardArr, (<HTMLInputElement>SEARCH).value);
             searchArr = [...currentArr];
         }
 
-        // if (target.closest('.feed__card')) {
-        //     target.classList.add('card-active');
-        //     console.log(target);
-        // }
+        if (target.classList.contains('card__button')) {
+            const cardNum = currentCardArr.find((number) => number.num === currentValue);
+            if (!target.classList.contains('card-active')) {
+                cardNum.btn = true;
+                target.classList.add('card-active');
+                count++;
+            } else if (target.classList.contains('card-active')) {
+                cardNum.btn = false;
+                target.classList.remove('card-active');
+                count--;
+            }
+            mainPage.innerHTML = await MainPage.render();
+            header.innerHTML = await Header.render(count);
+        }
 
-        if (brandFilter) {
+        if (target.classList.contains('tools__reset')) {
+            for (const obj in filterObj) {
+                filterObj[obj] = false;
+            }
+            const allBtn = document.querySelectorAll('.tools__button');
+            const allSelect = document.querySelectorAll('.tools__select');
+            const popCheck = document.querySelector('.popular__input');
+            const yearSlider = <RangeSlider>document.getElementById('range-slider-year');
+            yearSlider.startValue = 2000;
+            yearSlider.endValue = 2021;
+
+            allBtn.forEach((el) => {
+                el.classList.remove('brand-active');
+                el.classList.remove('body-active');
+                el.classList.remove('color-active');
+            });
+            allSelect.forEach((sort) => (sort.getElementsByTagName('option')[0].selected = true));
+            (<HTMLInputElement>popCheck).checked = false;
+        }
+
+        if (filterObj.brandFilter) {
             currentCardArr = [...brandArr];
         }
 
-        if (bodyFilter) {
+        if (filterObj.bodyFilter) {
             currentCardArr = [...bodyArr];
         }
 
-        if (colorFilter) {
+        if (filterObj.colorFilter) {
             currentCardArr = [...colorArr];
         }
 
-        if (transmissionFilter) {
+        if (filterObj.transmissionFilter) {
             currentCardArr = [...transmissionArr];
         }
 
-        if (fuelFilter) {
+        if (filterObj.fuelFilter) {
             currentCardArr = [...fuelArr];
         }
 
-        if (sortFilter) {
+        if (filterObj.sortFilter) {
             currentCardArr = [...sortArr];
         }
 
-        if (yearFilter) {
+        if (filterObj.yearFilter) {
             currentCardArr = [...yearArr];
         }
 
-        if (popFilter) {
+        if (filterObj.popFilter) {
             currentCardArr = [...popArr];
         }
 
-        if (searchFilter) {
+        if (filterObj.searchFilter) {
             currentCardArr = [...searchArr];
         }
         // console.log(currentCardArr);
@@ -243,28 +281,13 @@ async function router() {
         // console.log(bodyFilter);
         // console.log(brandArr);
         // console.log(bodyArr);
-
+        // renderCards(currentCardArr);
         renderCards(currentCardArr);
-
         // console.log(currentCardArr);
     });
-
-    const FEED = document.querySelector('.main__feed');
-    FEED.addEventListener('click', (e: Event) => {
-        const target = e.target as HTMLElement;
-        if (target.classList.contains('feed__card')) {
-            target.classList.add('card-active');
-            console.log(target);
-        }
-    });
-    console.log(`'
-    Привет!
-    Это еще не всё! Я могу больше))
-    Буду благодарен, если проверите мою работу позже.
-    Хорошего дня и успехов в учебе! ;)'`);
 }
 
 window.addEventListener('load', windowsOnLoad);
-async function windowsOnLoad() {
-    await router();
+function windowsOnLoad() {
+    router();
 }

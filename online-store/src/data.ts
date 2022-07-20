@@ -1,14 +1,3 @@
-// export interface IData {
-//     num: string;
-//     brand: string;
-//     model: string;
-//     year: string;
-//     body: string;
-//     color: string;
-//     transmission: string;
-//     fuel: string;
-//     favorite: boolean;
-// }
 import { ICard } from './views/pages/PageRender';
 
 export const data: ICard[] = [
@@ -22,6 +11,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '2',
@@ -33,6 +23,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '3',
@@ -44,6 +35,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '4',
@@ -55,6 +47,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '5',
@@ -66,6 +59,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '6',
@@ -77,6 +71,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: true,
+        btn: false,
     },
     {
         num: '7',
@@ -88,6 +83,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '8',
@@ -99,6 +95,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '9',
@@ -110,6 +107,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '10',
@@ -121,6 +119,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '11',
@@ -132,6 +131,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '12',
@@ -143,6 +143,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '13',
@@ -154,6 +155,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '14',
@@ -165,6 +167,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '15',
@@ -176,6 +179,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '16',
@@ -187,6 +191,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '17',
@@ -198,6 +203,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
     {
         num: '18',
@@ -209,6 +215,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
     {
         num: '19',
@@ -220,6 +227,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '20',
@@ -231,6 +239,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '21',
@@ -242,6 +251,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '22',
@@ -253,6 +263,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '23',
@@ -264,6 +275,7 @@ export const data: ICard[] = [
         transmission: 'Automanual',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '24',
@@ -275,6 +287,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '25',
@@ -286,6 +299,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
     {
         num: '26',
@@ -297,6 +311,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '27',
@@ -308,6 +323,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '28',
@@ -319,6 +335,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '29',
@@ -330,6 +347,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '30',
@@ -341,6 +359,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: true,
+        btn: false,
     },
     {
         num: '31',
@@ -352,6 +371,7 @@ export const data: ICard[] = [
         transmission: 'Automanual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '32',
@@ -363,6 +383,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '33',
@@ -374,6 +395,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '34',
@@ -385,6 +407,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '35',
@@ -396,6 +419,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '36',
@@ -407,6 +431,7 @@ export const data: ICard[] = [
         transmission: 'Automanual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '37',
@@ -418,6 +443,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '38',
@@ -429,6 +455,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '39',
@@ -440,6 +467,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '40',
@@ -451,6 +479,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '41',
@@ -462,6 +491,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '42',
@@ -473,6 +503,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '43',
@@ -484,6 +515,7 @@ export const data: ICard[] = [
         transmission: 'Automanual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '44',
@@ -495,6 +527,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '45',
@@ -506,6 +539,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '46',
@@ -517,6 +551,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '47',
@@ -528,6 +563,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '48',
@@ -539,6 +575,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '49',
@@ -550,6 +587,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '50',
@@ -561,6 +599,7 @@ export const data: ICard[] = [
         transmission: 'Manual',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '51',
@@ -572,6 +611,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: true,
+        btn: false,
     },
     {
         num: '52',
@@ -583,6 +623,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Gasoline',
         favorite: false,
+        btn: false,
     },
     {
         num: '53',
@@ -594,6 +635,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '54',
@@ -605,6 +647,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '55',
@@ -616,6 +659,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '56',
@@ -627,6 +671,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Diesel',
         favorite: false,
+        btn: false,
     },
     {
         num: '57',
@@ -638,6 +683,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
     {
         num: '58',
@@ -649,6 +695,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: true,
+        btn: false,
     },
     {
         num: '59',
@@ -660,6 +707,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
     {
         num: '60',
@@ -671,6 +719,7 @@ export const data: ICard[] = [
         transmission: 'Automatic',
         fuel: 'Electric',
         favorite: false,
+        btn: false,
     },
 ];
 

@@ -8,10 +8,11 @@ class CardAuto {
         public color: string,
         public transmission: string,
         public fuel: string,
-        public favorite: boolean
+        public favorite: boolean,
+        public btn: boolean
     ) {}
 
-    createCard() {
+    createCard(strClass: string, strVal: string) {
         const card = document.createElement('div');
         card.classList.add('feed__card');
         card.innerHTML = `
@@ -26,6 +27,7 @@ class CardAuto {
                   <p class="card__text"><span class="card__option">Transmission:</span> ${this.transmission}</p>
                   <p class="card__text"><span class="card__option">Fuel type:</span> ${this.fuel}</p>
                   <p class="card__text"><span class="card__option">Color:</span> ${this.color}</p>
+                  <button class="card__button ${strClass}" data-filter="${this.num}">${strVal}</button>
                 </div>
                 `;
         return card;

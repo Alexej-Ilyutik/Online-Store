@@ -45,12 +45,13 @@
             float: right;
             border: 0;
             padding: 0;
+            left: 0.1rem;
             cursor: pointer;
             height: 3.8rem;
             width: 9rem;
-            color: #fff;
+            color: var(--white-color);
             background: transparent;
-            border-left: 0.2rem solid #fff;
+            border-left: 0.2rem solid var(--white-color);
             border-radius: 0 0.3rem 0.3rem 0;
             font-size: 1.8rem;
             top: -0.1rem;

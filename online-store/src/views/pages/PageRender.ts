@@ -1,5 +1,5 @@
 interface PageRender {
-    render(): Promise<string>;
+    render(str?: number): Promise<string>;
 }
 
 interface ICard {
@@ -13,6 +13,7 @@ interface ICard {
     transmission: string;
     fuel: string;
     favorite: boolean;
+    btn: boolean;
 }
 
 export { PageRender, ICard };

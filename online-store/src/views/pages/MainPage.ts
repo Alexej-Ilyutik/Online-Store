@@ -94,6 +94,7 @@ function renderCards(array: ICard[]) {
         const transmissionType = array[i]['transmission'];
         const fuelType = array[i]['fuel'];
         const favoriteAuto = array[i]['favorite'];
+        const btnStatus = array[i]['btn'];
 
         const newCard = new CardAuto(
             numImg,
@@ -104,10 +105,15 @@ function renderCards(array: ICard[]) {
             colorBody,
             transmissionType,
             fuelType,
-            favoriteAuto
+            favoriteAuto,
+            btnStatus
         );
 
-        FEED_CONTAINER.appendChild(newCard.createCard());
+        if (btnStatus) {
+            FEED_CONTAINER.appendChild(newCard.createCard('card-active', 'Remove'));
+        } else {
+            FEED_CONTAINER.appendChild(newCard.createCard('', 'Add'));
+        }
     }
 }
 
@@ -128,7 +134,6 @@ function filterByYear(array: ICard[], min: number, max: number) {
 
 function searchCard(array: ICard[], str: string) {
     const newArr: ICard[] = [];
-    // str = str.replace(/\s+/g, ' ').trim().toLowerCase();
     str = str.trim().toLowerCase();
     array.forEach((el) => {
         const model = el.model.toLowerCase();
